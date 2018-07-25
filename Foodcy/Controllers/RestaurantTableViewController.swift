@@ -109,7 +109,7 @@ class RestaurantTableViewController: UITableViewController {
             restaurantImages.remove(at: indexPath.row)
         }
         
-        tableView.reloadData()
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     /*
     // MARK: - Navigation
