@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4uJ-zb-Dk6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvx-l1-VjD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Table View Controller-->
+        <!--Foodcy-->
         <scene sceneID="3uD-G9-KZc">
             <objects>
                 <tableViewController id="4uJ-zb-Dk6" customClass="RestaurantTableViewController" customModule="Foodcy" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,6 +79,7 @@
                                     <outlet property="nameLabel" destination="k7q-Dx-8jM" id="6fI-7K-CbK"/>
                                     <outlet property="thumbnailImageView" destination="5EA-S8-tgP" id="pWD-fP-1du"/>
                                     <outlet property="typeLabel" destination="wpF-y0-5aa" id="39y-kt-PrP"/>
+                                    <segue destination="yDQ-Xd-fqM" kind="show" identifier="showRestaurantDetail" id="T5e-fT-cY2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,10 +88,58 @@
                             <outlet property="delegate" destination="4uJ-zb-Dk6" id="thQ-jx-vbH"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Foodcy" id="J6C-pA-ZHU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFa-5O-OLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="135"/>
+            <point key="canvasLocation" x="912.79999999999995" y="134.48275862068968"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="Ku0-2D-w76">
+            <objects>
+                <viewController id="yDQ-Xd-fqM" customClass="RestaurantDetailViewController" customModule="Foodcy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gm6-Jb-NLm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogi-zZ-rtT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ogi-zZ-rtT" firstAttribute="top" secondItem="5nS-MZ-kMg" secondAttribute="top" id="0u3-Zx-3Gz"/>
+                            <constraint firstItem="ogi-zZ-rtT" firstAttribute="leading" secondItem="5nS-MZ-kMg" secondAttribute="leading" id="0wC-OU-AwA"/>
+                            <constraint firstItem="5nS-MZ-kMg" firstAttribute="bottom" secondItem="ogi-zZ-rtT" secondAttribute="bottom" id="9Sq-uU-Scr"/>
+                            <constraint firstItem="5nS-MZ-kMg" firstAttribute="trailing" secondItem="ogi-zZ-rtT" secondAttribute="trailing" id="ZIr-wQ-Brb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5nS-MZ-kMg"/>
+                    </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="ogi-zZ-rtT" id="C5S-bb-SmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVa-xi-0cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1859" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ff8-GW-PQP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nvx-l1-VjD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IHv-SK-GoK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4uJ-zb-Dk6" kind="relationship" relationship="rootViewController" id="eUd-l2-HtJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyB-E6-jA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="134.48275862068968"/>
         </scene>
     </scenes>
 </document>

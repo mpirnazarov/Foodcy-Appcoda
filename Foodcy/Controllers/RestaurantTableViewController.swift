@@ -22,12 +22,6 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,8 +29,18 @@ class RestaurantTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+            }
+        }
+    }
+    
+    
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return restaurantNames.count
@@ -58,48 +62,6 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     } 
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        //  Create an option menu as an action sheet
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-
-        //  Add actions to the menu
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        optionMenu.addAction(cancelAction)
-        
-        // Add Call action
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message:
-                "Sorry, the call feature is not available yet. Please retry later.",
-                                                 preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler:
-                nil))
-            self.present(alertMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)",
-            style: .default, handler: callActionHandler)
-        optionMenu.addAction(callAction)
-        
-        
-        //  Add Check-in or check-out action
-        let checkInTitle = !restaurantIsVisited[indexPath.row] ? "Check in" : "Check out"
-        
-        let checkInActionHandler = UIAlertAction(title: checkInTitle, style: .default, handler:
-        {
-            (action: UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark
-            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
-        })
-        
-        optionMenu.addAction(checkInActionHandler)
-        
-        //  Display the menu
-        present(optionMenu, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         // Social sharing button
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: {(action, indexPath) -> Void in
@@ -122,11 +84,54 @@ class RestaurantTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
+        let otherAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Other") { (action, indexPath) in
+            //  Create an option menu as an action sheet
+            let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+            
+            //  Add actions to the menu
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            optionMenu.addAction(cancelAction)
+            
+            // Add Call action
+            let callActionHandler = { (action:UIAlertAction!) -> Void in
+                let alertMessage = UIAlertController(title: "Service Unavailable", message:
+                    "Sorry, the call feature is not available yet. Please retry later.",
+                                                     preferredStyle: .alert)
+                alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler:
+                    nil))
+                self.present(alertMessage, animated: true, completion: nil)
+            }
+            let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)",
+                style: .default, handler: callActionHandler)
+            optionMenu.addAction(callAction)
+            
+            //  Add Check-in or check-out action
+            let checkInTitle = !self.restaurantIsVisited[indexPath.row] ? "Check in" : "Check out"
+            
+            let checkInActionHandler = UIAlertAction(title: checkInTitle, style: .default, handler:
+            {
+                (action: UIAlertAction!) -> Void in
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .none : .checkmark
+                self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
+            })
+            
+            optionMenu.addAction(checkInActionHandler)
+            
+            //  Display the menu
+            self.present(optionMenu, animated: true, completion: nil)
+            
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+        
         // Changing colors of action buttons
         shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
-        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        otherAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor.red
         
-        return [shareAction, deleteAction]
+        return [otherAction, shareAction, deleteAction]
     }
+    
+    
 
 }
