@@ -205,7 +205,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-Vr-wjO">
                                 <rect key="frame" x="37" y="40" width="301" height="420"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-S4-vzQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-S4-vzQ">
                                         <rect key="frame" x="0.0" y="0.0" width="301" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="nFG-Fv-zW4"/>
@@ -231,6 +231,9 @@ What do you think?</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Absolutely love it!"/>
+                                                <connections>
+                                                    <segue destination="O5g-Pt-YTo" kind="unwind" identifier="great" unwindAction="ratingButtonTappedWithSegue:" id="E9Q-kG-LAF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-yA-pCZ">
                                                 <rect key="frame" x="0.0" y="42.5" width="285" height="37"/>
@@ -238,6 +241,9 @@ What do you think?</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Good"/>
+                                                <connections>
+                                                    <segue destination="O5g-Pt-YTo" kind="unwind" identifier="good" unwindAction="ratingButtonTappedWithSegue:" id="w2X-HU-ayp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNo-9Z-W0A">
                                                 <rect key="frame" x="0.0" y="84.5" width="285" height="37.5"/>
@@ -245,6 +251,9 @@ What do you think?</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="I don't like it"/>
+                                                <connections>
+                                                    <segue destination="O5g-Pt-YTo" kind="unwind" identifier="dislike" unwindAction="ratingButtonTappedWithSegue:" id="8yJ-aH-DtZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -269,7 +278,7 @@ What do you think?</string>
                                     <constraint firstItem="cWN-S4-vzQ" firstAttribute="top" secondItem="dAv-Vr-wjO" secondAttribute="top" id="djo-Pj-CQl"/>
                                     <constraint firstItem="yeU-fy-ucu" firstAttribute="leading" secondItem="dAv-Vr-wjO" secondAttribute="leading" constant="8" id="j3c-D8-fKp"/>
                                     <constraint firstItem="IAh-dC-2Zv" firstAttribute="leading" secondItem="dAv-Vr-wjO" secondAttribute="leading" constant="15" id="l7W-eA-an8"/>
-                                    <constraint firstItem="IAh-dC-2Zv" firstAttribute="top" secondItem="cWN-S4-vzQ" secondAttribute="bottom" constant="8" id="r8a-zZ-sbw"/>
+                                    <constraint firstItem="IAh-dC-2Zv" firstAttribute="top" secondItem="cWN-S4-vzQ" secondAttribute="bottom" constant="8" id="r8a-zZ-sbw" userLabel="You've dined here.  What do you think?.top = barrafina.bottom + 8"/>
                                     <constraint firstAttribute="trailing" secondItem="yeU-fy-ucu" secondAttribute="trailing" constant="8" id="thX-Re-Q71"/>
                                 </constraints>
                             </view>
@@ -288,6 +297,8 @@ What do you think?</string>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="Ije-Gm-6rl" id="gXf-vQ-7rI"/>
+                        <outlet property="containerView" destination="83H-Z8-lKm" id="1fe-sh-pGS"/>
+                        <outlet property="restaurantImage" destination="cWN-S4-vzQ" id="WUN-MB-vUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS8-wK-MQP" userLabel="First Responder" sceneMemberID="firstResponder"/>

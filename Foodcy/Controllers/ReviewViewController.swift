@@ -11,20 +11,40 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     // MARK: - Variables
+    var restaurant: Restaurant!
+    // MARK: - Actions
+    
     
     // MARK: - Outlets
     @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var restaurantImage: UIImageView!
     
     // MARK: - Native methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        restaurantImage.image = UIImage(named: restaurant.image)
+        
+        // Blur effect
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
-
+        
+        // Animation
+//        let scaleTransform = CGAffineTransform.init(scaleX: 0, y: 0)
+//        let translateTransform = CGAffineTransform.init(translationX: 0, y: -1000)
+//        let combineTransform = scaleTransform.concatenating(translateTransform)
+//        containerView.transform = combineTransform
     }
+    
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.containerView.transform = CGAffineTransform.identity
+//        })
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,14 +52,5 @@ class ReviewViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
