@@ -191,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1858.4000000000001" y="131.78410794602701"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="s8r-Qx-2CZ">
             <objects>
-                <viewController id="vE3-RK-sLy" sceneMemberID="viewController">
+                <viewController id="vE3-RK-sLy" customClass="ReviewViewController" customModule="Foodcy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83H-Z8-lKm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,6 +286,9 @@ What do you think?</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yGh-ra-We4"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Ije-Gm-6rl" id="gXf-vQ-7rI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS8-wK-MQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="O5g-Pt-YTo" userLabel="Exit" sceneMemberID="exit"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B00C41210E841F0093578D /* ReviewViewController.swift */; };
 		B1F147662107E05E001E939B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F147652107E05E001E939B /* AppDelegate.swift */; };
 		B1F1476B2107E05E001E939B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F147692107E05E001E939B /* Main.storyboard */; };
 		B1F1476D2107E060001E939B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F1476C2107E060001E939B /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1B00C41210E841F0093578D /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B1F147622107E05E001E939B /* Foodcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F147652107E05E001E939B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1F1476A2107E05E001E939B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				B1F1477B2107EDC1001E939B /* RestaurantTableViewCell.swift */,
 				B1F1477D2108A295001E939B /* RestaurantDetailViewController.swift */,
 				B1F14782210A084A001E939B /* RestaurantDetailTableViewCell.swift */,
+				B1B00C41210E841F0093578D /* ReviewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				B1F147802109D67B001E939B /* Restaurant.swift in Sources */,
 				B1F147782107E440001E939B /* RestaurantTableViewController.swift in Sources */,
+				B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */,
 				B1F1477C2107EDC1001E939B /* RestaurantTableViewCell.swift in Sources */,
 				B1F14783210A084A001E939B /* RestaurantDetailTableViewCell.swift in Sources */,
 				B1F1477E2108A295001E939B /* RestaurantDetailViewController.swift in Sources */,
