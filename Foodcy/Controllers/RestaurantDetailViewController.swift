@@ -35,6 +35,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // restaurantNameLabel.text = restaurant.name
         // restaurantTypeLabel.text = restaurant.type
         // restaurantLocationLabel.text = restaurant.location
+        
+        // Self sizing cells
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
