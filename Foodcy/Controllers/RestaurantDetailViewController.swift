@@ -17,6 +17,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var restaurantLocationLabel: UILabel!
     @IBOutlet var tableView:UITableView!
     
+    // MARK: - Actions
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
+    
     // MARK: - Variables
     var restaurant:Restaurant!
     
