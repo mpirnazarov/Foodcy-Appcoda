@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
+    // MARK: - Variables
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F,  72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", phone: "348-233423", image: "homei.jpg", isVisited: false),
@@ -34,10 +35,18 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", image: "caskpubkitchen.jpg", isVisited: false)
     ]
     
+    // MARK: - Outlets
+    
+    
+    // MARK: - Native methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // Self sizing cells
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
