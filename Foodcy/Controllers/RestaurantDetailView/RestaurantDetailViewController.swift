@@ -40,7 +40,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     // MARK: - Variables
-    var restaurant:Restaurant!
+    var restaurant:RestaurantMO!
     
     // MARK: - Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,7 +70,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 //        tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         // restaurantNameLabel.text = restaurant.name
         // restaurantTypeLabel.text = restaurant.type
         // restaurantLocationLabel.text = restaurant.location
@@ -85,7 +85,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Adding anotation to map we created
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {
             placemarks, error in
             if error != nil {
                 print(error!)
@@ -140,7 +140,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.location
         case 3:
             cell.fieldLabel.text = "Phone"
-            cell.valueLabel.text = restaurant.phone
+            cell.valueLabel.text = "123"
         case 4:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)" : "No"

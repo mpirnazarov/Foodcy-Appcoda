@@ -200,6 +200,9 @@
                     <navigationItem key="navigationItem" title="New Restaurant" id="gjL-sE-EvM">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCd-Lj-Y88">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="BoJ-oH-vy1" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="fZB-ka-uMN"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="jwa-p2-XIT">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,6 +221,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBu-Kg-Ikq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BoJ-oH-vy1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2801" y="-567"/>
         </scene>

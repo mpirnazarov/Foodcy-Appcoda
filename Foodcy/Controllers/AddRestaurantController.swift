@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -37,10 +38,26 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             present(alert, animated: true, completion: nil)
         }
         else{
-            print(restaurantNameOutlet?.text)
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                restaurant = RestaurantMO(context:
+                    appDelegate.persistentContainer.viewContext)
+                restaurant.name = restaurantNameOutlet.text
+                restaurant.type = restaurantTypeOutlet.text
+                restaurant.location = restaurantLocationOutlet.text
+                restaurant.isVisited = isVisited
+                if let restaurantImage = photoImageView.image {
+                    if let imageData = UIImagePNGRepresentation(restaurantImage) {
+                        restaurant.image = NSData(data: imageData) as Data
+                    }
+                }
+                print("Saving data to context ...")
+                appDelegate.saveContext()
+            }
+            
+            
             dismiss(animated: true, completion: nil)
         }
-         
+        
     }
     
     @IBAction func toggleBeenHereButton(sender: UIButton) {
@@ -62,6 +79,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     
     // MARK: - Variables
     var isVisited:Bool!
+    var restaurant:RestaurantMO!
     
     // MARK: - Native methods
     override func viewDidLoad() {

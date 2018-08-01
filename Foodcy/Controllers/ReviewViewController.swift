@@ -11,7 +11,7 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     // MARK: - Variables
-    var restaurant: Restaurant!
+    var restaurant: RestaurantMO?
     // MARK: - Actions
     
     
@@ -24,7 +24,7 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        restaurantImage.image = UIImage(named: restaurant.image)
+        restaurantImage.image = UIImage(data: restaurant?.image as! Data)
         
         // Blur effect
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
