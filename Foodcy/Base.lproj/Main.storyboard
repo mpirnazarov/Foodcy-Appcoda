@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="wtG-Qd-LIz" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="wtG-Qd-LIz" customClass="RestaurantTableViewCell" customModule="Foodcy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtG-Qd-LIz" id="D9e-4r-eub">
@@ -197,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="1858.4000000000001" y="131.78410794602701"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="AiH-tJ-2ZW">
             <objects>
-                <viewController id="J4z-0d-mHs" sceneMemberID="viewController">
+                <viewController id="J4z-0d-mHs" customClass="MapViewController" customModule="Foodcy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uq2-Y2-u1O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,6 +218,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i4G-v7-eXe"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="fRp-7Y-KE1" id="Vof-Kq-Vp3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU2-aO-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

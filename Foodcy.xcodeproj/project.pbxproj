@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B17F27BD211230EF0002606E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17F27BC211230EF0002606E /* MapViewController.swift */; };
 		B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B00C41210E841F0093578D /* ReviewViewController.swift */; };
 		B1B00C452110F4D50093578D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B00C442110F4D50093578D /* MapKit.framework */; };
 		B1F147662107E05E001E939B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F147652107E05E001E939B /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B17F27BC211230EF0002606E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B1B00C41210E841F0093578D /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B1B00C442110F4D50093578D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1F147622107E05E001E939B /* Foodcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				B1F1477D2108A295001E939B /* RestaurantDetailViewController.swift */,
 				B1F14782210A084A001E939B /* RestaurantDetailTableViewCell.swift */,
 				B1B00C41210E841F0093578D /* ReviewViewController.swift */,
+				B17F27BC211230EF0002606E /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				B1F14783210A084A001E939B /* RestaurantDetailTableViewCell.swift in Sources */,
 				B1F1477E2108A295001E939B /* RestaurantDetailViewController.swift in Sources */,
 				B1F147662107E05E001E939B /* AppDelegate.swift in Sources */,
+				B17F27BD211230EF0002606E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
