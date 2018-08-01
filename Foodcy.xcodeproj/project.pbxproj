@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B17F27BD211230EF0002606E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17F27BC211230EF0002606E /* MapViewController.swift */; };
+		B17F27BF2112437F0002606E /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17F27BE2112437F0002606E /* AddRestaurantController.swift */; };
+		B17F27C4211260A90002606E /* Foodcy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17F27C2211260A90002606E /* Foodcy.xcdatamodeld */; };
 		B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B00C41210E841F0093578D /* ReviewViewController.swift */; };
 		B1B00C452110F4D50093578D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B00C442110F4D50093578D /* MapKit.framework */; };
 		B1F147662107E05E001E939B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F147652107E05E001E939B /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		B17F27BC211230EF0002606E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B17F27BE2112437F0002606E /* AddRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
+		B17F27C3211260A90002606E /* Foodcy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodcy.xcdatamodel; sourceTree = "<group>"; };
 		B1B00C41210E841F0093578D /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B1B00C442110F4D50093578D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1F147622107E05E001E939B /* Foodcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +54,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B17F27C0211243CA0002606E /* RestaurantTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B1F147772107E440001E939B /* RestaurantTableViewController.swift */,
+				B1F1477B2107EDC1001E939B /* RestaurantTableViewCell.swift */,
+			);
+			path = RestaurantTableView;
+			sourceTree = "<group>";
+		};
+		B17F27C1211243DE0002606E /* RestaurantDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				B1F1477D2108A295001E939B /* RestaurantDetailViewController.swift */,
+				B1F14782210A084A001E939B /* RestaurantDetailTableViewCell.swift */,
+			);
+			path = RestaurantDetailView;
+			sourceTree = "<group>";
+		};
+		B17F27C5211260B70002606E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				B17F27C2211260A90002606E /* Foodcy.xcdatamodeld */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		B1B00C432110F4D50093578D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +114,7 @@
 				B1F147792107E50E001E939B /* App Basic files */,
 				B1F147712107E060001E939B /* Info.plist */,
 				B1F147812109D68D001E939B /* Models */,
+				B17F27C5211260B70002606E /* DataModels */,
 			);
 			path = Foodcy;
 			sourceTree = "<group>";
@@ -100,12 +131,11 @@
 		B1F1477A2107E5A0001E939B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B1F147772107E440001E939B /* RestaurantTableViewController.swift */,
-				B1F1477B2107EDC1001E939B /* RestaurantTableViewCell.swift */,
-				B1F1477D2108A295001E939B /* RestaurantDetailViewController.swift */,
-				B1F14782210A084A001E939B /* RestaurantDetailTableViewCell.swift */,
+				B17F27C0211243CA0002606E /* RestaurantTableView */,
+				B17F27C1211243DE0002606E /* RestaurantDetailView */,
 				B1B00C41210E841F0093578D /* ReviewViewController.swift */,
 				B17F27BC211230EF0002606E /* MapViewController.swift */,
+				B17F27BE2112437F0002606E /* AddRestaurantController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17F27BF2112437F0002606E /* AddRestaurantController.swift in Sources */,
 				B1F147802109D67B001E939B /* Restaurant.swift in Sources */,
 				B1F147782107E440001E939B /* RestaurantTableViewController.swift in Sources */,
+				B17F27C4211260A90002606E /* Foodcy.xcdatamodeld in Sources */,
 				B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */,
 				B1F1477C2107EDC1001E939B /* RestaurantTableViewCell.swift in Sources */,
 				B1F14783210A084A001E939B /* RestaurantDetailTableViewCell.swift in Sources */,
@@ -400,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B17F27C2211260A90002606E /* Foodcy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B17F27C3211260A90002606E /* Foodcy.xcdatamodel */,
+			);
+			currentVersion = B17F27C3211260A90002606E /* Foodcy.xcdatamodel */;
+			path = Foodcy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B1F1475A2107E05E001E939B /* Project object */;
 }
