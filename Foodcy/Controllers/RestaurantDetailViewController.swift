@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,6 +17,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var restaurantTypeLabel: UILabel!
     @IBOutlet weak var restaurantLocationLabel: UILabel!
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var mapView: MKMapView!
     
     // MARK: - Actions
     @IBAction func close(segue:UIStoryboardSegue) {
@@ -48,6 +50,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
+    @objc func showMap() {
+        performSegue(withIdentifier: "showMap", sender: self)
+    }
+    
+    
     //MARK: - Native methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +63,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Changing table view backgroun, separator...
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+//        tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
         restaurantImageView.image = UIImage(named: restaurant.image)
@@ -67,6 +74,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Self sizing cells
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Initializing TapGesture for identifying the map in the footer of tableView
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B00C41210E841F0093578D /* ReviewViewController.swift */; };
+		B1B00C452110F4D50093578D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B00C442110F4D50093578D /* MapKit.framework */; };
 		B1F147662107E05E001E939B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F147652107E05E001E939B /* AppDelegate.swift */; };
 		B1F1476B2107E05E001E939B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F147692107E05E001E939B /* Main.storyboard */; };
 		B1F1476D2107E060001E939B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1F1476C2107E060001E939B /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		B1B00C41210E841F0093578D /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		B1B00C442110F4D50093578D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1F147622107E05E001E939B /* Foodcy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodcy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F147652107E05E001E939B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1F1476A2107E05E001E939B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,17 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B00C452110F4D50093578D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1B00C432110F4D50093578D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1B00C442110F4D50093578D /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1F147592107E05E001E939B = {
 			isa = PBXGroup;
 			children = (
 				B1F147642107E05E001E939B /* Foodcy */,
 				B1F147632107E05E001E939B /* Products */,
+				B1B00C432110F4D50093578D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +148,11 @@
 				TargetAttributes = {
 					B1F147612107E05E001E939B = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
