@@ -50,27 +50,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     @IBAction func enterRestaurantToDB(segue:UIStoryboardSegue){
         print("Working")
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            restaurant = RestaurantMO(context:
-                appDelegate.persistentContainer.viewContext)
-            
-            for item in restaurantsAdd{
-                restaurant.name = item.name
-                restaurant.type = item.type
-                restaurant.location = item.location
-                restaurant.phone = item.phone
-                restaurant.isVisited = item.isVisited
-                if let restaurantImage = UIImage(named: item.image) {
-                    if let imageData = UIImagePNGRepresentation(restaurantImage) {
-                        restaurant.image = NSData(data: imageData) as Data
-                    }
-                }
-            }
-            
-            print("Saving data to context ...")
-            appDelegate.saveContext()
-        }
-        dismiss(animated: true, completion: nil)
+        
     }
     
     
@@ -131,10 +111,36 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             return
         }
         
+        // Activationg Walkthrough
         if let pageViewController =
             storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
             present(pageViewController, animated: true, completion: nil)
         }
+        
+        // Adding restaurant data to DB
+        for item in restaurantsAdd{
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                restaurant = RestaurantMO(context:
+                    appDelegate.persistentContainer.viewContext)
+                
+                
+                restaurant.name = item.name
+                restaurant.type = item.type
+                restaurant.location = item.location
+                restaurant.phone = item.phone
+                restaurant.isVisited = item.isVisited
+                if let restaurantImage = UIImage(named: item.image) {
+                    if let imageData = UIImagePNGRepresentation(restaurantImage) {
+                        restaurant.image = NSData(data: imageData) as Data
+                    }
+                }
+                print("Saving data to context ...")
+                appDelegate.saveContext()
+            }
+            
+        }
+        
+        tableView.reloadData()
     }
     
 

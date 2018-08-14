@@ -336,11 +336,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Foodcy" id="J6C-pA-ZHU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="redo" id="fkP-K2-eol">
-                            <connections>
-                                <segue destination="EbD-HS-GRg" kind="unwind" unwindAction="enterRestaurantToDBWithSegue:" id="OsC-o2-buu"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="19H-vM-9n6">
                             <connections>
                                 <segue destination="Frz-Td-1ei" kind="presentation" identifier="addRestaurant" id="VQl-P7-xXu"/>
@@ -349,7 +344,6 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFa-5O-OLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="EbD-HS-GRg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="912.79999999999995" y="134.48275862068968"/>
         </scene>
