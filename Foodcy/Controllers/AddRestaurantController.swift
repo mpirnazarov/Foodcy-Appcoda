@@ -16,13 +16,12 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet var restaurantNameOutlet: UITextField!
     @IBOutlet var restaurantTypeOutlet: UITextField!
     @IBOutlet var restaurantLocationOutlet: UITextField!
+    @IBOutlet var restaurantPhoneOutlet: UITextField!
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
     // MARK: - Actions
     @IBAction func saveAction(segue:UIStoryboardSegue) {
-        
-
         if restaurantNameOutlet?.text == "" || restaurantTypeOutlet?.text == "" || restaurantLocationOutlet?.text == ""{
             let valMessage = """
                 Some fields are missing. Please fill all fields.
@@ -44,6 +43,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                 restaurant.name = restaurantNameOutlet.text
                 restaurant.type = restaurantTypeOutlet.text
                 restaurant.location = restaurantLocationOutlet.text
+                restaurant.phone = restaurantPhoneOutlet.text
                 restaurant.isVisited = isVisited
                 if let restaurantImage = photoImageView.image {
                     if let imageData = UIImagePNGRepresentation(restaurantImage) {
@@ -53,8 +53,6 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
                 print("Saving data to context ...")
                 appDelegate.saveContext()
             }
-            
-            
             dismiss(animated: true, completion: nil)
         }
         
@@ -73,12 +71,11 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             yesButton.backgroundColor = UIColor.gray
             noButton.backgroundColor = UIColor.red
         }
-        
     }
     
     
     // MARK: - Variables
-    var isVisited:Bool!
+    var isVisited:Bool = false
     var restaurant:RestaurantMO!
     
     // MARK: - Native methods

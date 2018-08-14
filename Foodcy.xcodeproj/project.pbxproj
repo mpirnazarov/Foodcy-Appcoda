@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B14186EC2123705500FB7E5C /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14186EB2123705500FB7E5C /* WalkthroughContentViewController.swift */; };
+		B14186EE212371CE00FB7E5C /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14186ED212371CE00FB7E5C /* WalkthroughPageViewController.swift */; };
 		B17F27BD211230EF0002606E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17F27BC211230EF0002606E /* MapViewController.swift */; };
 		B17F27BF2112437F0002606E /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17F27BE2112437F0002606E /* AddRestaurantController.swift */; };
 		B17F27C4211260A90002606E /* Foodcy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17F27C2211260A90002606E /* Foodcy.xcdatamodeld */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B14186EB2123705500FB7E5C /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		B14186ED212371CE00FB7E5C /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		B17F27BC211230EF0002606E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B17F27BE2112437F0002606E /* AddRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		B17F27C3211260A90002606E /* Foodcy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodcy.xcdatamodel; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				B1B00C41210E841F0093578D /* ReviewViewController.swift */,
 				B17F27BC211230EF0002606E /* MapViewController.swift */,
 				B17F27BE2112437F0002606E /* AddRestaurantController.swift */,
+				B14186EB2123705500FB7E5C /* WalkthroughContentViewController.swift */,
+				B14186ED212371CE00FB7E5C /* WalkthroughPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +236,8 @@
 				B1F147782107E440001E939B /* RestaurantTableViewController.swift in Sources */,
 				B17F27C4211260A90002606E /* Foodcy.xcdatamodeld in Sources */,
 				B1B00C42210E841F0093578D /* ReviewViewController.swift in Sources */,
+				B14186EC2123705500FB7E5C /* WalkthroughContentViewController.swift in Sources */,
+				B14186EE212371CE00FB7E5C /* WalkthroughPageViewController.swift in Sources */,
 				B1F1477C2107EDC1001E939B /* RestaurantTableViewCell.swift in Sources */,
 				B1F14783210A084A001E939B /* RestaurantDetailTableViewCell.swift in Sources */,
 				B1F1477E2108A295001E939B /* RestaurantDetailViewController.swift in Sources */,
