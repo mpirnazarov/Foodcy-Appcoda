@@ -491,15 +491,33 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hn4-ph-Zvw">
+                                <rect key="frame" x="168" y="741" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWt-Ug-TqW">
+                                <rect key="frame" x="292" y="741" width="46" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTappedWithSender:" destination="ZHj-kG-kKt" eventType="touchUpInside" id="89Y-oG-x5l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mie-9s-4eD" firstAttribute="centerX" secondItem="jF6-hf-aNp" secondAttribute="centerX" id="5hc-V3-nwd"/>
                             <constraint firstItem="dPk-UX-PYc" firstAttribute="centerX" secondItem="jF6-hf-aNp" secondAttribute="centerX" id="Bh1-LH-POD"/>
+                            <constraint firstItem="SWt-Ug-TqW" firstAttribute="trailing" secondItem="lsO-dL-R9p" secondAttribute="trailing" id="Irc-RG-ywW"/>
                             <constraint firstItem="lsO-dL-R9p" firstAttribute="top" secondItem="jF6-hf-aNp" secondAttribute="top" constant="128" id="Irl-Ju-JgZ"/>
+                            <constraint firstItem="hn4-ph-Zvw" firstAttribute="bottom" secondItem="jF6-hf-aNp" secondAttribute="bottom" id="MwC-lS-IH8"/>
                             <constraint firstItem="jF6-hf-aNp" firstAttribute="bottom" secondItem="dPk-UX-PYc" secondAttribute="bottom" constant="287" id="YGB-cn-2mD"/>
+                            <constraint firstItem="SWt-Ug-TqW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fn2-pn-v4Z" secondAttribute="leading" constant="20" symbolic="YES" id="YW3-cc-cQ7"/>
                             <constraint firstItem="lsO-dL-R9p" firstAttribute="leading" secondItem="jF6-hf-aNp" secondAttribute="leading" constant="37" id="a3e-OS-aCz"/>
                             <constraint firstItem="mie-9s-4eD" firstAttribute="top" secondItem="jF6-hf-aNp" secondAttribute="top" constant="60" id="cIY-n7-0IA"/>
+                            <constraint firstItem="SWt-Ug-TqW" firstAttribute="top" secondItem="hn4-ph-Zvw" secondAttribute="top" id="gKB-TN-Gis"/>
+                            <constraint firstItem="hn4-ph-Zvw" firstAttribute="centerX" secondItem="dPk-UX-PYc" secondAttribute="centerX" id="icl-J5-3Qv"/>
                             <constraint firstItem="dPk-UX-PYc" firstAttribute="top" secondItem="lsO-dL-R9p" secondAttribute="bottom" constant="23" id="kfp-BX-921"/>
                             <constraint firstItem="jF6-hf-aNp" firstAttribute="trailing" secondItem="lsO-dL-R9p" secondAttribute="trailing" constant="37" id="ruP-x0-dWh"/>
                             <constraint firstItem="jF6-hf-aNp" firstAttribute="bottom" secondItem="lsO-dL-R9p" secondAttribute="bottom" constant="374" id="tEh-Ur-udV"/>
@@ -509,7 +527,9 @@
                     <connections>
                         <outlet property="contentImageView" destination="lsO-dL-R9p" id="FtZ-KY-Ira"/>
                         <outlet property="contentLabel" destination="dPk-UX-PYc" id="dS3-S6-0RN"/>
+                        <outlet property="forwardButton" destination="SWt-Ug-TqW" id="kwn-Ti-pTe"/>
                         <outlet property="headingLabel" destination="mie-9s-4eD" id="Ueq-Dv-zBJ"/>
+                        <outlet property="pageControl" destination="hn4-ph-Zvw" id="dES-0c-adX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjX-im-ynP" userLabel="First Responder" sceneMemberID="firstResponder"/>

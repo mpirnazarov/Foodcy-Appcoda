@@ -63,8 +63,15 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
             pageContentViewController.index = index
             return pageContentViewController
         }
-        return nil }
+        return nil
+    }
     
+    func forward(index: Int) {
+        if let nextViewController = contentViewController(at: index + 1) {
+            setViewControllers([nextViewController], direction: .forward, animated:
+                true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -58,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B14186EF2123832C00FB7E5C /* WalkthroughView */ = {
+			isa = PBXGroup;
+			children = (
+				B14186EB2123705500FB7E5C /* WalkthroughContentViewController.swift */,
+				B14186ED212371CE00FB7E5C /* WalkthroughPageViewController.swift */,
+			);
+			path = WalkthroughView;
+			sourceTree = "<group>";
+		};
 		B17F27C0211243CA0002606E /* RestaurantTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +149,7 @@
 				B1B00C41210E841F0093578D /* ReviewViewController.swift */,
 				B17F27BC211230EF0002606E /* MapViewController.swift */,
 				B17F27BE2112437F0002606E /* AddRestaurantController.swift */,
-				B14186EB2123705500FB7E5C /* WalkthroughContentViewController.swift */,
-				B14186ED212371CE00FB7E5C /* WalkthroughPageViewController.swift */,
+				B14186EF2123832C00FB7E5C /* WalkthroughView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
